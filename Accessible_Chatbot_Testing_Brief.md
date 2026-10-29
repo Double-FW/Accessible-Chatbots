@@ -1,16 +1,16 @@
-Accessible chatbot testing brief
+# Accessible chatbot testing brief
 
 Scope, execution instructions and expected outcomes
 
 Version 1.0 | 19 October 2026 | Companion: Accessible Chatbot Delivery Methodologies
 
-# 1\. Objective and status
+## 1\. Objective and status
 
 Establish whether people can discover, operate, understand and complete the chatbot's supported tasks independently, including after errors or interruptions. Evaluate the integrated host page, chatbot, authentication, generated content and any handoff service. Assess applicable WCAG 2.2 A/AA requirements separately from additional delivery outcomes and user-research findings.
 
 This is an execution brief, not a completed audit. Every case starts as Not run. A result requires evidence from the actual build and environment. The catalogue covers chatbot-specific behaviours and common host dependencies; a full-page and complete-process WCAG applicability review remains required before a conformance claim.
 
-# 2\. Commissioning and scope record
+## 2\. Commissioning and scope record
 
 Before testing, QA and the product owner must complete: product and build identifier; host URLs or routes; test environment; framework, SDK and renderer versions; design-system version; supported languages; model and knowledge configuration; presentation variants; feature inventory; and the named owners of engineering, content, accessibility review, research and release. Record the contractual baseline and any separately applicable legal or procurement requirements with the accountable compliance owner.
 
@@ -18,7 +18,7 @@ Run every applicable case in every shipped presentation. If desktop is embedded 
 
 Core scope includes launcher, closed and open panel, composer, suggestions, message delivery, transcript, streaming, status, errors, stop/retry, close/reopen, long history and service fallback. Add authentication, files, cards, voice, saved history, consequential actions and human handoff whenever present. Scope includes overlays, navigation and other host features that can interfere with the chatbot.
 
-# 3\. Environments and execution matrix
+## 3\. Environments and execution matrix
 
 Record exact OS, browser, assistive technology, device, viewport and relevant preferences for every run. Select supported versions before execution; do not use the word "latest" as the retained evidence. The following is a proposed starting matrix to be confirmed against users and service support, not a universal compatibility guarantee.
 
@@ -36,7 +36,7 @@ Use keyboard-only checks without a screen reader as well as screen reader runs. 
 
 For every supported combination, run the core journey: discover, open, send, receive, read history, recover from failure, close and resume. Run feature-specific cases across the combinations affected by that feature. Maintain a case-by-environment matrix so a pass in one combination does not conceal an untested one.
 
-# 4\. Test data and controllable states
+## 4\. Test data and controllable states
 
 Use a test backend or controlled fixtures to produce predictable success, delayed acknowledgement, streaming, cancellation, connection loss, server failure, duplicate events, session warning and expiry. Then repeat the critical journey against the real integration. A mocked success cannot prove that production authentication, transport or handoff works.
 
@@ -44,7 +44,7 @@ Prepare synthetic data: a short plain-text response; a long answer with headings
 
 Use representative real-model outputs as well as fixtures. For generative evaluation, retain the prompt, configuration, source set, response and reviewer judgement securely. Repeat the same input across an agreed number of runs and report observed variation. No finite sample proves that every future response will be accessible; enforce rendering constraints and monitor changes.
 
-# 5\. Methods, results and evidence
+## 5\. Methods, results and evidence
 
 Method codes: A = automated DOM, component, browser or scanner check; M = manual expert check with the relevant input mode or assistive technology; U = moderated user research. A+M means both are required. Automated checks of live-region nodes do not establish what a screen reader says. User research does not replace criterion-level checks.
 
@@ -54,9 +54,9 @@ For screen reader cases retain the meaningful spoken sequence and whether inform
 
 The mappings below are related WCAG criteria, not claims that each case alone proves those criteria. "Delivery" identifies requirements beyond a direct criterion mapping. Where a test has several assertions, record each separately and pass the case only when every applicable assertion passes. Split assertions into local subcases when different owners or defects need independent tracking.
 
-# 6\. Discovery, container and focus tests
+## 6\. Discovery, container and focus tests
 
-## T01 — Find and identify the service
+### T01 — Find and identify the service
 
 _Requirement M03. Method A+M. Related criteria: 2.4.6, 2.5.3, 4.1.2; AI disclosure is Delivery._
 
@@ -68,7 +68,7 @@ _Requirement M03. Method A+M. Related criteria: 2.4.6, 2.5.3, 4.1.2; AI disclosu
 
 **Evidence:** control name, location and reading sequence.
 
-## T02 — No unsolicited interruption
+### T02 — No unsolicited interruption
 
 _Requirement M03. Method A+M. Related criteria: 3.2.1 where applicable; no unsolicited opening or speech is Delivery._
 
@@ -80,7 +80,7 @@ _Requirement M03. Method A+M. Related criteria: 3.2.1 where applicable; no unsol
 
 **Evidence:** focus trace, speech observations and invitation behaviour.
 
-## T03 — Embedded panel opening and exit
+### T03 — Embedded panel opening and exit
 
 _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3, 4.1.2._
 
@@ -92,7 +92,7 @@ _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3, 4.1.2._
 
 **Evidence:** focus sequence and accessibility-tree observations.
 
-## T04 — Modal entry and containment
+### T04 — Modal entry and containment
 
 _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3, 4.1.2; modal interaction contract is Delivery._
 
@@ -104,7 +104,7 @@ _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3, 4.1.2; moda
 
 **Evidence:** initial announcement, boundary behaviour and focus trace.
 
-## T05 — Close and restore focus
+### T05 — Close and restore focus
 
 _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3; Escape policy is Delivery._
 
@@ -116,7 +116,7 @@ _Requirement M04. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.4.3; Escape poli
 
 **Evidence:** restored focus and draft state.
 
-## T06 — Breakpoint and iframe boundaries
+### T06 — Breakpoint and iframe boundaries
 
 _Requirement M04. Method A+M. Related criteria: 2.1.2, 2.4.3, 4.1.2; context continuity is Delivery._
 
@@ -128,7 +128,7 @@ _Requirement M04. Method A+M. Related criteria: 2.1.2, 2.4.3, 4.1.2; context con
 
 **Evidence:** before/after state and boundary trace.
 
-## T07 — Host navigation and competing overlays
+### T07 — Host navigation and competing overlays
 
 _Requirements M04, M13. Method A+M. Related criteria: 2.4.3, 2.4.11; restoration is Delivery._
 
@@ -140,9 +140,9 @@ _Requirements M04, M13. Method A+M. Related criteria: 2.4.3, 2.4.11; restoration
 
 **Evidence:** sequence and retained state.
 
-# 7\. Input and operation tests
+## 7\. Input and operation tests
 
-## T08 — Composer name and instructions
+### T08 — Composer name and instructions
 
 _Requirement M05. Method A+M. Related criteria: 1.3.1, 2.4.6, 3.3.2, 4.1.2._
 
@@ -154,7 +154,7 @@ _Requirement M05. Method A+M. Related criteria: 1.3.1, 2.4.6, 3.3.2, 4.1.2._
 
 **Evidence:** name/description and rendered instructions.
 
-## T09 — Send, new lines and text composition
+### T09 — Send, new lines and text composition
 
 _Requirement M05. Method A+M. Related criteria: 2.1.1, 3.2.2; editing conventions are Delivery._
 
@@ -166,7 +166,7 @@ _Requirement M05. Method A+M. Related criteria: 2.1.1, 3.2.2; editing convention
 
 **Evidence:** submitted text and event count.
 
-## T10 — Suggested prompts
+### T10 — Suggested prompts
 
 _Requirement M05. Method A+M. Related criteria: 2.1.1, 2.5.3, 3.2.2, 4.1.2._
 
@@ -178,7 +178,7 @@ _Requirement M05. Method A+M. Related criteria: 2.1.1, 2.5.3, 3.2.2, 4.1.2._
 
 **Evidence:** names, action and focus outcome.
 
-## T11 — Keyboard operation and shortcut conflicts
+### T11 — Keyboard operation and shortcut conflicts
 
 _Requirements M05, M06. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.1.4, 2.4.3._
 
@@ -190,7 +190,7 @@ _Requirements M05, M06. Method A+M. Related criteria: 2.1.1, 2.1.2, 2.1.4, 2.4.3
 
 **Evidence:** navigation script and any conflict.
 
-## T12 — Voice control, switch access and label matching
+### T12 — Voice control, switch access and label matching
 
 _Requirement M05. Method M+U. Related criteria: 2.1.1, 2.5.3; manageable effort is Delivery._
 
@@ -202,7 +202,7 @@ _Requirement M05. Method M+U. Related criteria: 2.1.1, 2.5.3; manageable effort 
 
 **Evidence:** task record and barrier observations.
 
-## T13 — Pointer, touch and gesture alternatives
+### T13 — Pointer, touch and gesture alternatives
 
 _Requirement M05. Method A+M. Related criteria: 2.5.1, 2.5.2, 2.5.4, 2.5.7, 2.5.8._
 
@@ -214,9 +214,9 @@ _Requirement M05. Method A+M. Related criteria: 2.5.1, 2.5.2, 2.5.4, 2.5.7, 2.5.
 
 **Evidence:** dimensions and exception rationale.
 
-# 8\. Transcript and announcement tests
+## 8\. Transcript and announcement tests
 
-## T14 — Message structure and chronology
+### T14 — Message structure and chronology
 
 _Requirement M06. Method A+M. Related criteria: 1.3.1, 1.3.2, 2.4.6, 4.1.2._
 
@@ -228,7 +228,7 @@ _Requirement M06. Method A+M. Related criteria: 1.3.1, 1.3.2, 2.4.6, 4.1.2._
 
 **Evidence:** reading sequence and message structure.
 
-## T15 — Efficient history and composer navigation
+### T15 — Efficient history and composer navigation
 
 _Requirement M06. Method M. Related criteria: 2.1.1, 2.1.2, 2.4.3; efficiency is Delivery._
 
@@ -240,7 +240,7 @@ _Requirement M06. Method M. Related criteria: 2.1.1, 2.1.2, 2.4.3; efficiency is
 
 **Evidence:** commands and number of navigation actions.
 
-## T16 — Preserve reading position on arrival
+### T16 — Preserve reading position on arrival
 
 _Requirements M06, M07. Method A+M. Related criteria: 2.4.3; reading and scroll preservation are Delivery._
 
@@ -252,7 +252,7 @@ _Requirements M06, M07. Method A+M. Related criteria: 2.4.3; reading and scroll 
 
 **Evidence:** before/after focus, viewport and spoken context.
 
-## T17 — Long history and virtualisation
+### T17 — Long history and virtualisation
 
 _Requirement M06. Method A+M. Related criteria: 1.3.2, 2.1.1, 2.4.3, 4.1.2._
 
@@ -264,7 +264,7 @@ _Requirement M06. Method A+M. Related criteria: 1.3.2, 2.1.1, 2.4.3, 4.1.2._
 
 **Evidence:** boundary sequence and reading trace.
 
-## T18 — Announcement ownership and duplication
+### T18 — Announcement ownership and duplication
 
 _Requirement M07. Method A+M. Related criterion: 4.1.3; single ownership is Delivery._
 
@@ -276,7 +276,7 @@ _Requirement M07. Method A+M. Related criterion: 4.1.3; single ownership is Deli
 
 **Evidence:** event-to-owner record and actual speech.
 
-## T19 — Progress and response completion
+### T19 — Progress and response completion
 
 _Requirement M07. Method A+M. Related criteria: 4.1.2, 4.1.3; bounded verbosity is Delivery._
 
@@ -288,7 +288,7 @@ _Requirement M07. Method A+M. Related criteria: 4.1.2, 4.1.3; bounded verbosity 
 
 **Evidence:** visible states and spoken sequence.
 
-## T20 — Streaming, rapid answers and bursts
+### T20 — Streaming, rapid answers and bursts
 
 _Requirement M07. Method A+M. Related criterion: 4.1.3; speech scheduling is Delivery._
 
@@ -300,7 +300,7 @@ _Requirement M07. Method A+M. Related criterion: 4.1.3; speech scheduling is Del
 
 **Evidence:** timing and speech observations in each environment.
 
-## T21 — Stop and regenerate
+### T21 — Stop and regenerate
 
 _Requirements M06, M07. Method A+M. Related criteria: 2.1.1, 4.1.2, 4.1.3; partial-answer labelling is Delivery._
 
@@ -312,7 +312,7 @@ _Requirements M06, M07. Method A+M. Related criteria: 2.1.1, 4.1.2, 4.1.3; parti
 
 **Evidence:** state, retained text and focus sequence.
 
-## T22 — Errors, alerts and announcement priority
+### T22 — Errors, alerts and announcement priority
 
 _Requirements M07, M10. Method M. Related criteria: 3.3.1, 4.1.3; interruption policy is Delivery._
 
@@ -324,9 +324,9 @@ _Requirements M07, M10. Method M. Related criteria: 3.3.1, 4.1.3; interruption p
 
 **Evidence:** speech sequence, urgency rationale and recovery route.
 
-# 9\. Visual presentation and adaptation tests
+## 9\. Visual presentation and adaptation tests
 
-## T23 — Text contrast and meaningful non-text contrast
+### T23 — Text contrast and meaningful non-text contrast
 
 _Requirement M08. Method A+M. Related criteria: 1.4.3, 1.4.11._
 
@@ -338,7 +338,7 @@ _Requirement M08. Method A+M. Related criteria: 1.4.3, 1.4.11._
 
 **Evidence:** measured pairs and screenshots.
 
-## T24 — Colour-independent meaning
+### T24 — Colour-independent meaning
 
 _Requirement M08. Method M. Related criteria: 1.3.3, 1.4.1._
 
@@ -350,7 +350,7 @@ _Requirement M08. Method M. Related criteria: 1.3.3, 1.4.1._
 
 **Evidence:** equivalent cues for each state.
 
-## T25 — Visible and unobscured focus
+### T25 — Visible and unobscured focus
 
 _Requirement M08. Method M. Related criteria: 2.4.7, 2.4.11, 1.4.11 where applicable._
 
@@ -362,7 +362,7 @@ _Requirement M08. Method M. Related criteria: 2.4.7, 2.4.11, 1.4.11 where applic
 
 **Evidence:** screenshots of boundary and overlay cases.
 
-## T26 — Text resize
+### T26 — Text resize
 
 _Requirement M08. Method M. Related criterion: 1.4.4._
 
@@ -374,7 +374,7 @@ _Requirement M08. Method M. Related criterion: 1.4.4._
 
 **Evidence:** setting, screenshots and completed interaction.
 
-## T27 — Reflow and zoom
+### T27 — Reflow and zoom
 
 _Requirement M08. Method M. Related criterion: 1.4.10._
 
@@ -386,7 +386,7 @@ _Requirement M08. Method M. Related criterion: 1.4.10._
 
 **Evidence:** actual viewport and exception boundaries.
 
-## T28 — Text spacing overrides
+### T28 — Text spacing overrides
 
 _Requirement M08. Method A+M. Related criterion: 1.4.12._
 
@@ -398,7 +398,7 @@ _Requirement M08. Method A+M. Related criterion: 1.4.12._
 
 **Evidence:** applied settings and affected components.
 
-## T29 — Forced colours and user themes
+### T29 — Forced colours and user themes
 
 _Requirement M08. Method M. Related criteria: 1.4.1, 1.4.3, 1.4.11, 2.4.7; adaptation is Delivery._
 
@@ -410,7 +410,7 @@ _Requirement M08. Method M. Related criteria: 1.4.1, 1.4.3, 1.4.11, 2.4.7; adapt
 
 **Evidence:** theme settings and screenshots.
 
-## T30 — Motion, automatic updates and flashing
+### T30 — Motion, automatic updates and flashing
 
 _Requirement M08. Method A+M. Related criteria: 2.2.2, 2.3.1; reduced-motion adaptation is Delivery._
 
@@ -422,7 +422,7 @@ _Requirement M08. Method A+M. Related criteria: 2.2.2, 2.3.1; reduced-motion ada
 
 **Evidence:** state captures and analysis.
 
-## T31 — Mobile viewport, keyboard and orientation
+### T31 — Mobile viewport, keyboard and orientation
 
 _Requirement M08. Method M. Related criteria: 1.3.4, 1.4.10, 2.4.11; mobile usability is Delivery._
 
@@ -434,9 +434,9 @@ _Requirement M08. Method M. Related criteria: 1.3.4, 1.4.10, 2.4.11; mobile usab
 
 **Evidence:** device recordings and viewport state.
 
-# 10\. Content and component tests
+## 10\. Content and component tests
 
-## T32 — Understandable prompts and AI limits
+### T32 — Understandable prompts and AI limits
 
 _Requirement M09. Method M+U. Delivery requirement; related criteria: 2.4.6, 3.3.2._
 
@@ -448,7 +448,7 @@ _Requirement M09. Method M+U. Delivery requirement; related criteria: 2.4.6, 3.3
 
 **Evidence:** comprehension responses and content defects.
 
-## T33 — Links, headings and language
+### T33 — Links, headings and language
 
 _Requirements M06, M09. Method A+M. Related criteria: 1.3.1, 2.4.4, 2.4.6, 3.1.1, 3.1.2._
 
@@ -460,7 +460,7 @@ _Requirements M06, M09. Method A+M. Related criteria: 1.3.1, 2.4.4, 2.4.6, 3.1.1
 
 **Evidence:** structure, destinations and spoken language.
 
-## T34 — Disclosures and hover content
+### T34 — Disclosures and hover content
 
 _Requirement M09. Method A+M. Related criteria: 1.4.13, 2.1.1, 4.1.2._
 
@@ -472,7 +472,7 @@ _Requirement M09. Method A+M. Related criteria: 1.4.13, 2.1.1, 4.1.2._
 
 **Evidence:** state and interaction observations.
 
-## T35 — Cards and nested controls
+### T35 — Cards and nested controls
 
 _Requirement M11. Method A+M. Related criteria: 1.3.1, 2.1.1, 2.1.2, 3.3.2, 4.1.2._
 
@@ -484,7 +484,7 @@ _Requirement M11. Method A+M. Related criteria: 1.3.1, 2.1.1, 2.1.2, 3.3.2, 4.1.
 
 **Evidence:** each card type and chosen-answer representation.
 
-## T36 — Images, charts and tables
+### T36 — Images, charts and tables
 
 _Requirement M11. Method A+M. Related criteria: 1.1.1, 1.3.1, 1.4.5 where applicable._
 
@@ -496,7 +496,7 @@ _Requirement M11. Method A+M. Related criteria: 1.1.1, 1.3.1, 1.4.5 where applic
 
 **Evidence:** content comparison and reading sequence.
 
-## T37 — Generated markup and unsupported formats
+### T37 — Generated markup and unsupported formats
 
 _Requirement M11. Method A+M. Related criteria: 1.3.1, 2.1.1, 4.1.2; safe rendering is Delivery._
 
@@ -508,7 +508,7 @@ _Requirement M11. Method A+M. Related criteria: 1.3.1, 2.1.1, 4.1.2; safe render
 
 **Evidence:** renderer output and fallback content.
 
-## T38 — Upload lifecycle
+### T38 — Upload lifecycle
 
 _Requirement M11. Method A+M. Related criteria: 2.1.1, 3.3.1, 3.3.2, 3.3.3, 4.1.3._
 
@@ -520,7 +520,7 @@ _Requirement M11. Method A+M. Related criteria: 2.1.1, 3.3.1, 3.3.2, 3.3.3, 4.1.
 
 **Evidence:** lifecycle and announcements.
 
-## T39 — Downloads and transcript export
+### T39 — Downloads and transcript export
 
 _Requirement M11. Method M. Related criteria depend on content; at minimum assess 1.3.1 and 2.4.4 for the web controls. Artifact accessibility is Delivery with its own baseline._
 
@@ -534,7 +534,7 @@ _Requirement M11. Method M. Related criteria depend on content; at minimum asses
 
 # 11\. Recovery, session and transaction tests
 
-## T40 — Validation and correction
+### T40 — Validation and correction
 
 _Requirement M10. Method A+M. Related criteria: 3.3.1, 3.3.2, 3.3.3, 4.1.3._
 
@@ -546,7 +546,7 @@ _Requirement M10. Method A+M. Related criteria: 3.3.1, 3.3.2, 3.3.3, 4.1.3._
 
 **Evidence:** wording, associations and successful correction.
 
-## T41 — Delivery failure and duplicate prevention
+### T41 — Delivery failure and duplicate prevention
 
 _Requirement M10. Method A+M. Delivery requirement; related criterion: 4.1.3._
 
@@ -558,7 +558,7 @@ _Requirement M10. Method A+M. Delivery requirement; related criterion: 4.1.3._
 
 **Evidence:** client and backend identifiers with synthetic content.
 
-## T42 — Outage and reconnect
+### T42 — Outage and reconnect
 
 _Requirements M10, M13. Method A+M. Related criteria: 2.1.1, 4.1.3; resilience is Delivery._
 
@@ -570,7 +570,7 @@ _Requirements M10, M13. Method A+M. Related criteria: 2.1.1, 4.1.3; resilience i
 
 **Evidence:** state sequence and recovery outcome.
 
-## T43 — Session warning and extension
+### T43 — Session warning and extension
 
 _Requirement M10. Method A+M. Related criterion: 2.2.1._
 
@@ -582,7 +582,7 @@ _Requirement M10. Method A+M. Related criterion: 2.2.1._
 
 **Evidence:** timestamps and server state.
 
-## T44 — Expiry, reauthentication and draft policy
+### T44 — Expiry, reauthentication and draft policy
 
 _Requirements M10, M13. Method A+M. Related criteria: 3.3.8 where applicable; state recovery is Delivery._
 
@@ -594,7 +594,7 @@ _Requirements M10, M13. Method A+M. Related criteria: 3.3.8 where applicable; st
 
 **Evidence:** before/after state and recovery path.
 
-## T45 — Accessible authentication and redundant entry
+### T45 — Accessible authentication and redundant entry
 
 _Requirements M10, M13. Method A+M. Related criteria: 1.3.5, 3.3.7, 3.3.8._
 
@@ -606,7 +606,7 @@ _Requirements M10, M13. Method A+M. Related criteria: 1.3.5, 3.3.7, 3.3.8._
 
 **Evidence:** each authentication path and applicable exceptions.
 
-## T46 — Consequential actions
+### T46 — Consequential actions
 
 _Requirement M10. Method A+M. Related criterion: 3.3.4 where applicable; broader confirmation policy is Delivery._
 
@@ -618,7 +618,7 @@ _Requirement M10. Method A+M. Related criterion: 3.3.4 where applicable; broader
 
 **Evidence:** review screen, corrected values and transaction state.
 
-## T47 — Close, end, clear and new conversation
+### T47 — Close, end, clear and new conversation
 
 _Requirements M02, M10. Method A+M. Related criteria: 2.4.6, 3.3.4 if deletion is in scope; state distinction is Delivery._
 
@@ -630,9 +630,9 @@ _Requirements M02, M10. Method A+M. Related criteria: 2.4.6, 3.3.4 if deletion i
 
 **Evidence:** state transition and storage outcome.
 
-# 12\. Voice, media, handoff and privacy tests
+## 12\. Voice, media, handoff and privacy tests
 
-## T48 — Voice input and permission recovery
+### T48 — Voice input and permission recovery
 
 _Requirement M12. Method A+M. Delivery requirement; related criteria: 2.1.1, 4.1.2, 4.1.3._
 
@@ -644,7 +644,7 @@ _Requirement M12. Method A+M. Delivery requirement; related criteria: 2.1.1, 4.1
 
 **Evidence:** permission and mode-switch sequence.
 
-## T49 — Audio output and media alternatives
+### T49 — Audio output and media alternatives
 
 _Requirements M11, M12. Method M. Related criteria: 1.2.1–1.2.5 as applicable, 1.4.2, 2.1.1._
 
@@ -656,7 +656,7 @@ _Requirements M11, M12. Method M. Related criteria: 1.2.1–1.2.5 as applicable,
 
 **Evidence:** alternatives and control results.
 
-## T50 — Human handoff and unavailable service
+### T50 — Human handoff and unavailable service
 
 _Requirement M12. Method A+M+U. Delivery requirement; related criteria: 3.2.6, 3.3.2, 4.1.3._
 
@@ -668,7 +668,7 @@ _Requirement M12. Method A+M+U. Delivery requirement; related criteria: 3.2.6, 3
 
 **Evidence:** end-to-end handoff and fallback completion.
 
-## T51 — Privacy, consent and deletion
+### T51 — Privacy, consent and deletion
 
 _Requirement M13. Method A+M. Delivery requirement, with separate privacy-policy assessment._
 
@@ -680,7 +680,7 @@ _Requirement M13. Method A+M. Delivery requirement, with separate privacy-policy
 
 **Evidence:** redacted event examples and data-lifecycle checks.
 
-## T52 — Chat unavailable and progressive fallback
+### T52 — Chat unavailable and progressive fallback
 
 _Requirement M13. Method A+M. Delivery requirement; related criteria: 2.1.1, 2.4.4, 4.1.3 where applicable._
 
@@ -692,9 +692,9 @@ _Requirement M13. Method A+M. Delivery requirement; related criteria: 2.1.1, 2.4
 
 **Evidence:** each failure mode and alternate journey.
 
-# 13\. Assurance and regression tests
+## 13\. Assurance and regression tests
 
-## T53 — Automated state coverage
+### T53 — Automated state coverage
 
 _Requirement M14. Method A with manual triage. Relevant criteria depend on scanner rule and state._
 
@@ -706,7 +706,7 @@ _Requirement M14. Method A with manual triage. Relevant criteria depend on scann
 
 **Evidence:** CI output and triage record.
 
-## T54 — Full-page and complete-process review
+### T54 — Full-page and complete-process review
 
 _Requirements M01, M14. Method M supported by A. Baseline: all applicable WCAG 2.2 A/AA criteria._
 
@@ -718,7 +718,7 @@ _Requirements M01, M14. Method M supported by A. Baseline: all applicable WCAG 2
 
 **Evidence:** signed applicability ledger and scope.
 
-## T55 — SDK, model and host-change regression
+### T55 — SDK, model and host-change regression
 
 _Requirements M14, M15. Method A+M. Delivery requirement._
 
@@ -730,7 +730,7 @@ _Requirements M14, M15. Method A+M. Delivery requirement._
 
 **Evidence:** impact assessment and regression matrix.
 
-## T56 — Release controls and rollback
+### T56 — Release controls and rollback
 
 _Requirement M15. Method M. Delivery requirement._
 
@@ -742,7 +742,7 @@ _Requirement M15. Method M. Delivery requirement._
 
 **Evidence:** release record and rehearsal result.
 
-## T57 — Accessible feedback and continuous review
+### T57 — Accessible feedback and continuous review
 
 _Requirement M16. Method A+M+U. Delivery requirement; survey controls have their own applicable WCAG criteria._
 
@@ -754,7 +754,7 @@ _Requirement M16. Method A+M+U. Delivery requirement; survey controls have their
 
 **Evidence:** completed submissions and review record.
 
-# 14\. Moderated user-research brief
+## 14\. Moderated user-research brief
 
 Research lead: assign before recruitment. Recruit disabled participants with relevant combinations of vision, hearing, speech, motor, cognitive and literacy needs, including people who use screen readers, magnification, voice control or switches. Include sighted participants and people with different digital confidence. Use participants' familiar devices where possible, compensate time, offer breaks and accessible consent, and permit a support person if requested. Do not use simulated disability or synthetic personas as substitutes.
 
@@ -762,27 +762,27 @@ Agree a recruitment matrix and sample rationale against task risk and audience d
 
 Give realistic goals without naming the controls that solve them. Record unaided completion, prompted completion, inability to complete, errors, recoveries, perceived effort, loss of place and trust. Task time is diagnostic, not a universal speed requirement. Avoid comparing disabled participants against a single "normal" speed threshold.
 
-## U01 — Discover help and understand the service
+### U01 — Discover help and understand the service
 
 Related cases T01–T04, T32. Task: find help on the host page and decide whether chat is suitable for a realistic question. Expected outcome: the participant finds the service, understands its automated nature and starts or chooses an alternative without facilitator navigation instructions. Capture what caused hesitation or an incorrect expectation.
 
-## U02 — Ask, understand and act
+### U02 — Ask, understand and act
 
 Related cases T08–T14, T32–T37. Task: ask a question with several details, interpret the response and choose the next step. Expected outcome: the participant can express the request, recognise the answer's meaning and limits, inspect a source where offered and take the intended action. Ask them to explain the answer in their own words rather than merely rating clarity.
 
-## U03 — Review while a new message arrives
+### U03 — Review while a new message arrives
 
 Related cases T15–T22. Task: find an earlier fact while another answer is generated, then return to the new answer. Expected outcome: the participant keeps their place, detects availability, reaches the new content deliberately and resumes composing. Record announcement overload, navigation effort and any need to restart reading.
 
-## U04 — Recover from a mistake or interruption
+### U04 — Recover from a mistake or interruption
 
 Related cases T40–T47. Task: correct a deliberate input error, recover from a network interruption and resume after closing the panel. Expected outcome: the participant understands the problem, can recover without re-entering avoidably lost information and knows whether an action completed. Do not let the facilitator perform the recovery invisibly.
 
-## U05 — Use preferred modes and presentation
+### U05 — Use preferred modes and presentation
 
 Related cases T12, T23–T31, T48–T49. Task: complete a relevant journey with the participant's normal zoom, theme, input and output preferences. Expected outcome: settings remain effective and do not remove controls or require an unwanted mode change. Record fatigue, reach, precision, speech privacy and sensory load as well as completion.
 
-## U06 — Obtain further help and report a barrier
+### U06 — Obtain further help and report a barrier
 
 Related cases T50, T52, T57. Task: resolve a question the bot cannot answer and report a difficulty. Expected outcome: the participant finds a usable alternative, understands any queue or delay, controls information transfer and can report the barrier without completing the inaccessible task. If no human service exists, test the actual alternative rather than inventing one.
 
@@ -790,7 +790,7 @@ Use optional questions after each relevant task: "Were you able to finish?", "Wh
 
 Assess outcomes across use without vision, limited vision, colour-independent use, hearing alternatives, speech alternatives, manipulation, reach, photosensitivity, cognitive support and privacy as relevant. Report concrete barriers, affected tasks and proposed fixes. These themes support research; they are not a conformity checklist or evidence that a legal regime applies.
 
-# 15\. Defect severity, completion and release decision
+## 15\. Defect severity, completion and release decision
 
 Use severity based on task impact. Critical: essential service is unavailable to an interaction mode, inescapable trap, serious harmful flashing, or unrecoverable consequential action. High: important information or action is inaccessible, major focus loss, or recovery fails. Medium: repeated confusion, excessive effort or a limited workaround is required. Low: limited friction without loss of essential meaning or action. A workaround does not automatically lower severity; examine burden, privacy and independence.
 
@@ -800,7 +800,7 @@ Report coverage and pass rate separately. Coverage = executed applicable case-en
 
 The release report contains: build and scope; supported environments; methods; coverage; criterion outcomes; task and research findings; defects and affected users; exceptions and limitations; remediation owners; approval; and rollback trigger. Preserve the evidence needed to reproduce each material finding. No product has been tested by producing this brief.
 
-# 16\. WCAG 2.2 A/AA applicability ledger
+## 16\. WCAG 2.2 A/AA applicability ledger
 
 Create one row per criterion below, with applicability, rationale, environment, evidence, result and owner. These are coverage prompts, not substitute test procedures. The related cases are starting points; add criterion-specific checks wherever their evidence is insufficient. The ledger includes 55 A/AA criteria. SC 4.1.1 is removed in WCAG 2.2; assess it separately if an older contractual baseline requires it.
 
@@ -822,7 +822,7 @@ Create one row per criterion below, with applicability, rationale, environment, 
 | 3.3.1 Error Identification; 3.3.2 Labels or Instructions; 3.3.3 Error Suggestion; 3.3.4 Error Prevention (Legal, Financial, Data); 3.3.7 Redundant Entry; 3.3.8 Accessible Authentication (Minimum)   | T08, T38, T40, T44–T47                                                                               |
 | 4.1.2 Name, Role, Value; 4.1.3 Status Messages                                                                                                                                                        | T01–T22, T34, T35, T38, T40–T50                                                                      |
 
-# 17\. Requirement-to-test traceability
+## 17\. Requirement-to-test traceability
 
 | **Methodology requirement** | **Test coverage**                        |
 | --------------------------- | ---------------------------------------- |
@@ -843,7 +843,7 @@ Create one row per criterion below, with applicability, rationale, environment, 
 | M15 Release                 | T55–T56 and exit criteria                |
 | M16 Continuous improvement  | T57, U01–U06 and regression review       |
 
-# 18\. Reference basis and maintenance
+## 18\. Reference basis and maintenance
 
 Use with Double FW's Inclusive Chatbot Interfaces Reference version 1.1 and Accessible Branded Chatbot Generation Prompt Template version 1.2, dated 24 September 2026. Criterion terminology follows W3C WCAG 2.2. The related W3C Understanding documents for reflow, contrast, target size, text spacing, timing and accessible authentication inform the measurement cases. WAI-ARIA Authoring Practices, H102, ARIA23 and status-message guidance inform container and notification checks. Bot Framework Web Chat accessibility documentation applies only where that SDK is installed. Record actual versions of axe-core and other test tools in execution evidence.
 
