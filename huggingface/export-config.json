@@ -1,0 +1,22 @@
+{
+  "source_repository": "Double-FW/Accessible-Chatbots",
+  "destination_dataset": "GarethFW/accessible-chatbots",
+  "dataset_version": "0.2.0",
+  "files": [
+    "AGENTS.md",
+    "Accessible_Branded_Chatbot_Generation_Prompt_Template.md",
+    "Accessible_Chatbot_Delivery_Methodologies.md",
+    "Accessible_Chatbot_Testing_Brief.md",
+    "Inclusive_Chatbot_Interface_Reference.md",
+    "LICENSE",
+    "README.md",
+    "Reusable generation prompt.md",
+    "chatbot_RAG.md"
+  ],
+  "required_files": [
+    "AGENTS.md",
+    "LICENSE",
+    "chatbot_RAG.md"
+  ],
+  "approved_license_sha256": "7ef02bc0b6ba376de57be5f27784eef23df6a74068a4a2a172f95ba2c605b7af"
+}
