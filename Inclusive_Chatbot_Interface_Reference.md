@@ -76,5 +76,3 @@ Track coverage separately from test pass rates. A clean axe scan is not an acces
 - [W3C ARIA23 chat log technique](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA23.html) and [Understanding status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html): notification semantics. Informative guidance.
 - [Microsoft Bot Framework Web Chat accessibility documentation](https://github.com/microsoft/BotFramework-WebChat/blob/main/docs/ACCESSIBILITY.md), [project repository](https://github.com/microsoft/BotFramework-WebChat) and [Copilot Studio documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/): vendor behaviours and integration. Check the installed version.
 - [axe-core repository](https://github.com/dequelabs/axe-core): automated engine and its coverage limitations.
-
-The attached outline refers to a Strata component library but contains no usable Strata documentation URL. Treat component availability and accessibility as unverified until the organisation supplies authoritative links.
